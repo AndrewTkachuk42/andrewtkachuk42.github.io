@@ -40,7 +40,7 @@ img.ontouchend = function () {
     if (currentImg === 9) {
         currentImg = 1;
     }
-    if (x * (x / mltp) > 350) {
+    if (x * (x / mltp) > 550) {
         img.style.backgroundImage = `url(./1/${currentImg + 1}.jpeg)`;
         transformX = 0;
         currentX = 0;
