@@ -23,8 +23,8 @@ body {
 }
 
 .photo {
-  width: 70vw;
-  height: 80vh;
+  width: 100vw;
+  height: 60vh;
   background-color: gray;
   background-size: cover;
   -webkit-transition-duration: 200ms;
