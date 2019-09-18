@@ -27,11 +27,15 @@ body {
   height: 60vh;
   background-color: gray;
   background-size: cover;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+}
+
+.op-0 {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

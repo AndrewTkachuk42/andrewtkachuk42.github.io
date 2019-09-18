@@ -5,7 +5,7 @@ let transformX = 0;
 let x = 0;
 let negX = 0;
 let mltp = 10;
-let currentImg = 5;
+let currentImg = 7;
 
 let img = getSel('.photo');
 
@@ -46,14 +46,22 @@ img.ontouchend = function () {
         currentX = 0;
         x = 0;
         currentImg++;
+        opct();
     }
+    
     transformX = 0;
     currentX = 0;
     x = 0;
     console.log('end');
     img.style.transform = `translateX(${transformX}px)`;
     img.removeEventListener('touchmove', swipe);
+    
 }
+function opct() {
+    img.classList.toggle('op-0');
+    setTimeout(function(){img.classList.toggle('op-0');},500);
+}
+
 
 
 // img.onmousedown = function(){
