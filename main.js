@@ -2,38 +2,44 @@ let getSel = (sel) => document.querySelector(sel);
 
 let currentX = 0;
 let transformX = 0;
+let x = 0;
+let mltp = 5;
 
 let img = getSel('.photo');
 
 img.style.backgroundImage = 'url(./1/5.jpeg)';
 
 
-img.ontouchstart = function (e) {
-    currentX = e.touches[0].clientX;
-    transformX = 0;
-    img.addEventListener('touchmove', function (e) {
-        clientX = e.touches[0].clientX;
-        if (clientX < currentX) {
-            transformX -= 1;
-        }
-        else {
-            transformX += 1;
-        }
-        console.log(transformX);
-        
-        img.style.transform = `translateX(${transformX}px)`;
-    }, false);
+img.ontouchstart = function () {
+    currentX = event.touches[0].clientX;
+    img.addEventListener('touchmove', swipe);
 }
+
+function swipe() {
+    if (event.touches[0].clientX < currentX) {
+        x = currentX - event.touches[0].clientX;
+        x = x * -1;
+        img.style.transform = `translateX(${x * mltp}px)`;
+    }
+    else {
+        x = event.touches[0].clientX - currentX;
+        img.style.transform = `translateX(${x * mltp}px)`;
+    }
+    console.log('x:', x);
+    console.log('now:', event.touches[0].clientX);
+    console.log(x * mltp);
+    
+    
+}
+
 
 img.ontouchend = function () {
     transformX = 0;
     currentX = 0;
+    x = 0;
     console.log('end');
-    
     img.style.transform = `translateX(${transformX}px)`;
-    img.removeEventListener('touchmove', function (e) {
-        clientX = e.touches[0].clientX;
-    }, false);
+    img.removeEventListener('touchmove', swipe);
 }
 
 
