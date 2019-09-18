@@ -3,7 +3,7 @@ let getSel = (sel) => document.querySelector(sel);
 let currentX = 0;
 let transformX = 0;
 let x = 0;
-let mltp = 3;
+let mltp = 4;
 
 let img = getSel('.photo');
 
