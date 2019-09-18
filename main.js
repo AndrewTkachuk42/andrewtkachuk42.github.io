@@ -21,11 +21,11 @@ function swipe() {
     if (event.touches[0].clientX < currentX) {
         x = currentX - event.touches[0].clientX;
         negX = x * -1;
-        img.style.transform = `translateX(${negX * (x / mltp)}px)`;
+        // img.style.transform = `translateX(${negX * (x / mltp)}px)`;
     }
     else {
         x = event.touches[0].clientX - currentX;
-        img.style.transform = `translateX(${x * (x / mltp)}px)`;
+        // img.style.transform = `translateX(${x * (x / mltp)}px)`;
     }
     // else if 
     console.log('x:', x);
