@@ -21,23 +21,26 @@ function swipe() {
     if (event.touches[0].clientX < currentX) {
         x = currentX - event.touches[0].clientX;
         negX = x * -1;
-        img.style.transform = `translateX(${negX * mltp}px)`;
+        img.style.transform = `translateX(${negX * (x / mltp)}px)`;
     }
     else {
         x = event.touches[0].clientX - currentX;
-        img.style.transform = `translateX(${x * mltp}px)`;
+        img.style.transform = `translateX(${x * (x / mltp)}px)`;
     }
     // else if 
     console.log('x:', x);
     console.log('now:', event.touches[0].clientX);
-    console.log(x * mltp);
+    console.log(x * (x / mltp));
 
 
 }
 
 
 img.ontouchend = function () {
-    if (x * mltp > 150) {
+    if (currentImg === 9) {
+        currentImg = 1;
+    }
+    if (x * (x / mltp) > 250) {
         img.style.backgroundImage = `url(./1/${currentImg + 1}.jpeg)`;
         transformX = 0;
         currentX = 0;
