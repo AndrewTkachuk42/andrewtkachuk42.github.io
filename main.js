@@ -5,7 +5,7 @@ let transformX = 0;
 let x = 0;
 let negX = 0;
 let mltp = 10;
-let currentImg = 7;
+let currentImg = 20;
 
 let img = getSel('.photo');
 
@@ -40,7 +40,7 @@ img.ontouchend = function () {
     if (currentImg === 9) {
         currentImg = 1;
     }
-    if (x * (x / mltp) > 250) {
+    if (x * (x / mltp) > 350) {
         img.style.backgroundImage = `url(./1/${currentImg + 1}.jpeg)`;
         transformX = 0;
         currentX = 0;
