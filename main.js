@@ -10,16 +10,17 @@ img.style.backgroundImage = 'url(./1/5.jpeg)';
 
 img.ontouchstart = function (e) {
     currentX = e.touches[0].clientX;
+    transformX = 0;
     img.addEventListener('touchmove', function (e) {
         clientX = e.touches[0].clientX;
         if (clientX < currentX) {
-            transformX -= 10;
-            console.log(transformX);
+            transformX -= 1;
         }
         else {
-            transformX += 10;
-            console.log(transformX);
+            transformX += 1;
         }
+        console.log(transformX);
+        
         img.style.transform = `translateX(${transformX}px)`;
     }, false);
 }
@@ -27,6 +28,8 @@ img.ontouchstart = function (e) {
 img.ontouchend = function () {
     transformX = 0;
     currentX = 0;
+    console.log('end');
+    
     img.style.transform = `translateX(${transformX}px)`;
     img.removeEventListener('touchmove', function (e) {
         clientX = e.touches[0].clientX;
