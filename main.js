@@ -4,7 +4,7 @@ let currentX = 0;
 let transformX = 0;
 let x = 0;
 let negX = 0;
-let mltp = 20;
+let mltp = 40;
 let currentImg = 5;
 
 let img = getSel('.photo');
