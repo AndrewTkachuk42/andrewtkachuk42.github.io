@@ -3,7 +3,9 @@ let getSel = (sel) => document.querySelector(sel);
 let currentX = 0;
 let transformX = 0;
 let x = 0;
+let negX = 0;
 let mltp = 10;
+let currentImg = 5;
 
 let img = getSel('.photo');
 
@@ -18,22 +20,30 @@ img.ontouchstart = function () {
 function swipe() {
     if (event.touches[0].clientX < currentX) {
         x = currentX - event.touches[0].clientX;
-        x = x * -1;
-        img.style.transform = `translateX(${x * mltp}px)`;
+        negX = x * -1;
+        img.style.transform = `translateX(${negX * mltp}px)`;
     }
     else {
         x = event.touches[0].clientX - currentX;
         img.style.transform = `translateX(${x * mltp}px)`;
     }
+    // else if 
     console.log('x:', x);
     console.log('now:', event.touches[0].clientX);
     console.log(x * mltp);
-    
-    
+
+
 }
 
 
 img.ontouchend = function () {
+    if (x * mltp > 150) {
+        img.style.backgroundImage = `url(./1/${currentImg + 1}.jpeg)`;
+        transformX = 0;
+        currentX = 0;
+        x = 0;
+        currentImg++;
+    }
     transformX = 0;
     currentX = 0;
     x = 0;
