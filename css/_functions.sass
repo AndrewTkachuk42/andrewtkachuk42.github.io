@@ -1,0 +1,7 @@
+@function vw($px)  
+    $resault: (($px * 100)/1920) 
+    @return $resault + 0vw
+
+@function vwDiv($px, $div)  
+    $resault: (($px * 100)/1920) 
+    @return $resault/$div + 0vw    

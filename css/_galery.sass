@@ -1,0 +1,184 @@
+.galery 
+    width: vw(1860)
+    margin:
+        left: auto
+        right: auto
+    margin-top: 40px
+    display: flex
+    overflow: hidden
+    @media screen and ( max-width:500px )
+        margin-top: 0
+
+.galery__row-1
+    display: flex
+    flex-direction: column
+    width: vwDiv(1860, 3)
+    overflow: hidden
+    @media ( max-width: 768px ) 
+        width: vwDiv(1860, 2)
+            
+    
+.galery__row-2
+    @extend .galery__row-1 
+   
+.galery__row-3
+    @extend .galery__row-1 
+    @media ( max-width: 768px ) 
+        display: none  
+
+.galery__row-4
+    @extend .galery__row-1 
+    display: none  
+    @media ( min-width: 1440px )
+        display: flex  
+        
+
+.galery__img
+    will-change: width, height, opacity
+    width: 100%
+    height: auto
+    transition: width 600ms ease-in-out, opacity 500ms ease-out
+
+.galery__img--show
+    opacity: 1
+    
+
+.galery__img-wrapper
+    display: flex
+    align-items: flex-start
+    position: relative
+
+.show-img
+    @extend %op-1
+
+.galery__img-cover
+    width: 100%
+    height: 100%
+    background-color: black
+    opacity: 0
+    position: absolute
+    transition-property: opacity
+    @extend %tr-600
+
+.galery__img-wrapper:hover .galery__img-cover
+    // @media (pointer: coarse)
+    opacity: 0.5   
+    
+
+.galery__img-wrapper:hover .galery__img
+    width: 110%
+    
+
+.galery__text
+    @extend %op-0
+    transition-duration: 1s
+    transition-timing-function: ease-in-out
+    transition-property: opacity
+    position: absolute
+    color: #fff
+    bottom: 0
+    height: 100%
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    padding-left: 18%   
+    cursor: pointer 
+    @media ( max-width: 600px )
+        padding-left: 9%
+
+.galery__img-wrapper:hover .galery__text
+    // @media (pointer: fine) 
+    opacity: 1             
+
+.galery__text-title
+    font:
+        size: 1.3rem
+        weight: 600
+        family: 'Montserrat', sans-serif
+    letter-spacing: 0.1em
+    
+.galery__text-secondary
+    letter-spacing: 0.1em
+    text-transform: none
+    margin-top: 15px    
+
+.galery__zoomed
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 10
+    width: 100%
+    display: none
+    opacity: 0
+    @extend %tr-800
+    transition-property: opacity
+    transition-timing-function: ease-out
+
+.show-galery__zoomed
+    display: flex
+
+.show-galery__op-1
+    opacity: 1
+
+.galery__zoomed-img-container
+    display: flex
+    flex-direction: column
+
+.galery__zoomed-img
+    width: 100%
+    height: auto
+    border:
+        left: 2vw solid white
+        right: 2vw solid white
+        bottom: 2vw solid white 
+
+.galery__zoomed-close
+    opacity: 0.6
+    position: fixed
+    right: 0
+    width: 30px
+    height: 30px
+    border-radius: 15px
+    box-shadow: 0px 0px 5px rgba(0, 0 ,0 ,0.4 )
+    background-color: white
+    margin:
+        top: 5vw
+        right: 5vw
+    background-image: url('../icons/close.png')
+    background-size: 50%
+    background-repeat: no-repeat
+    background-position: center
+
+.galery__zoomed-img--1
+    border:
+        top: 2vw solid white
+
+
+#more-btn 
+    margin: 120px auto 120px auto
+    text-transform: uppercase
+    cursor: pointer
+    border-bottom: 2px solid white
+    @extend %tr-500
+    transition-property: border-bottom
+    display: none
+    @media ( max-width: 715px ) 
+        border-bottom: 2px solid black
+
+.more-btn--show 
+
+#more-btn:focus
+    outline: none   
+
+
+#more-btn:hover
+    border-bottom: 2px solid black
+
+
+
+  
+    
+    
+    

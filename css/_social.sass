@@ -1,0 +1,66 @@
+.social
+    position: fixed
+    right: 50px
+    bottom: 50px
+
+.social__link
+    color: black
+    font-size: 1.3rem    
+
+.social__btn
+    background-color: #fff
+    width: 50px
+    height: 50px
+    border-radius: 25px
+    @extend %f-c
+    @extend %tr-300
+    @extend %e-out
+    box-shadow: -2px 0px 7px rgba(0 ,0 ,0 ,0.3 )
+
+
+.social__btn:hover
+     width: 70px
+     height: 70px
+     border-radius: 35px
+    
+.social__icn
+    margin:
+        right: 2px
+        top: 0px
+
+%social-link-common
+    @extend %tr-600
+    @extend %e-in-out
+    @extend %op-0
+    @extend %f-c
+    position: fixed
+    background-color: #fff
+    width: 50px
+    height: 50px
+    border-radius: 25px
+    right: 50px
+    bottom: 50px  
+    box-shadow: -1px 0px 5px rgba(0 ,0 ,0 ,0.2 )
+
+.social__inst
+    @extend %social-link-common
+    
+
+.social:hover .social__inst
+    @extend %op-1
+    right: 220px
+    bottom: 60px 
+      
+      
+.social__fb
+    @extend %social-link-common
+    transition-duration: 500ms
+    
+
+.social:hover .social__fb
+    @extend %op-1
+    right: 145px
+    bottom: 60px
+  
+
+    

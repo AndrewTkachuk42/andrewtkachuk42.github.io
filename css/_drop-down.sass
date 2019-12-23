@@ -1,0 +1,127 @@
+.drop-down
+    margin-left: auto
+    display: none
+    @media ( max-width: 715px )
+        display: block
+
+$mltp-1: 0.7
+$mltp-2: 0.8
+
+.drop-down__list
+    will-change: opacity, transform
+    position: fixed
+    width: 100%
+    background-color: white
+    top: 60px
+    pointer-events: none
+    @extend %op-0
+    transition: opacity $mltp-2 * 500ms ease-out $mltp-2 * 250ms, transform  $mltp-2 * 350ms ease-out  $mltp-2 * 300ms
+    transform: scale(1, 0.8)
+    transform-origin: top
+    
+.show-dropdown
+    @extend %op-1
+    pointer-events: auto
+
+.show-dropdown-scale
+    transform: scale(1, 1)
+
+.drop-down__link
+    cursor: default
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding-right: 50px
+    border:
+        bottom: 1px solid $gray-l
+    color: black
+    transition: background-color 
+    @media ( max-width: 600px )
+        padding-right: 25px
+
+.drop-down__link--portfolio
+    color: $gray
+    padding-right: 75px
+    @media ( max-width: 600px )
+        padding-right: 25+12.5px
+    
+
+.drop-down__link:hover
+    color: black
+    background-color: lighten($gray-l, 30%)
+
+.drop-down__item
+    height: 60px    
+
+.drop-down__dot
+    background-color: $gray
+    width: 4px
+    height: 4px
+    border-radius: 2px  
+    transition-property: background-color
+    @extend %tr-300  
+
+
+.drop-down__btn
+    will-change: transform
+    display: flex
+    flex-direction: column
+    width: 20px
+    height: 20px
+    transform-origin: center
+    justify-content: space-between
+    transition: transform $mltp-1 * 600ms ease-out
+
+.drop-down__btn--clicked
+    transform: rotate(90deg) scale(0)
+
+.drop-down__cross
+    will-change: opacity, transform
+    position: absolute
+    width: 20px
+    height: 20px
+    bottom: 20px
+    @extend %op-0
+    pointer-events: none
+    transition: transform  $mltp-1 * 400ms ease-out $mltp-1 * 50ms, opacity $mltp-1 * 300ms linear $mltp-1 * 100ms
+    transform: rotate(-90deg) scale(0.5)
+
+.show-cross
+    @extend %op-1
+    transform: rotate(0deg) scale(1)
+    pointer-events: auto
+
+
+.drop-down__line-1
+    background-color: $gray
+    width: 22px
+    height: 4px
+    transform: translateY(9px) translateX(-1px) rotate(45deg)
+
+.drop-down__line-2
+    background-color: $gray
+    width: 22px
+    height: 4px
+    transform: translateY(5px) translateX(-1px) rotate(-45deg)    
+    
+
+.drop-down__btn:hover .drop-down__dot
+    background-color: black
+  
+
+.drop-down__btn-row
+    display: flex
+    justify-content: space-between
+
+.d-block
+    display: block !important
+
+
+
+
+
+    
+    // background-image: url('../icn/baseline-apps-24px.svg')
+    // justify-content: space-between

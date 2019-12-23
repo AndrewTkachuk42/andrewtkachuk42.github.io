@@ -1,0 +1,208 @@
+.navbar
+    height: 120px 
+    display: flex
+    border-bottom: 1px solid $gray-l
+    align-items: center
+    // justify-content: center
+    padding:
+        left: 50px
+        right: 50px
+    flex-wrap: nowrap
+    @media ( max-width:  715px )
+        height: 60px
+        width: 100%
+        background-color: white
+        position: fixed
+        z-index: 5
+        top: 0
+        
+    @media ( max-width: 600px )
+        padding:
+            left: 50/2 + 0px
+            right: 50/2 + 0px  
+          
+     
+        
+    
+.navbar__nav 
+    display: flex
+    margin-left: auto
+    @media screen and ( max-width: 715px )
+        display: none
+    
+
+.navbar__logo 
+    border:
+        top: 2px solid black
+        bottom: 2px solid black
+
+.navbar__nav-item
+    margin-left: 32px
+
+.ml-0
+    margin-left: 0
+
+.material-icons 
+    font-size: 12px
+    transform: rotate(90deg)
+    margin-left: 6px
+    opacity: 0
+
+.op-1 
+    @extend %tr-300
+    transition-timing-function: ease-in  
+
+.navbar__nav-item:hover .op-1
+    opacity: 1
+
+.navbar__icn
+    @media screen and ( max-width:600px )
+        display: none
+        
+
+.navbar__navlink
+    position: relative
+    color: $gray
+    @extend %tr-300  
+      
+.navbar__navlink:hover
+    color: black
+    
+%navbar__underscore
+    @extend %op-0
+    @extend %tr-600
+    position: absolute
+    left: -2px
+    bottom: -2px
+    content: ""
+    background-color: black
+    height: 2px    
+    
+
+.navbar__underscore--1 .navbar__navlink::after
+    @extend %navbar__underscore 
+    width: 50px
+
+.navbar__underscore--3 .navbar__navlink::after
+    @extend %navbar__underscore 
+    width: 44px
+
+.navbar__navlink .navbar__navlink:after
+    color: black
+    
+
+.navbar__underscore--4 .navbar__navlink::after
+    @extend %navbar__underscore    
+    width: 56px
+
+.navbar__underscore--1 .navbar__navlink:hover::after
+    @extend %op-1
+
+.navbar__underscore--3 .navbar__navlink:hover::after
+    @extend %op-1
+    
+
+.navbar__underscore--4 .navbar__navlink:hover::after
+    @extend %op-1
+
+.page-nav
+    margin-left: vw(372)
+    @media (max-width: 900px)
+        margin: 0 
+        padding-left: 50px
+
+    @media ( max-width: 600px )
+        padding-left: 50/2 + 0px
+    
+
+.breadcrumbs         
+    margin-top: 40px   
+    color: $gray-l 
+    margin-left: 4px
+    letter-spacing: 0.1em
+    @media ( max-width:  715px )
+        margin-top: 0
+
+h1
+    margin-top: 30px
+    font:
+        family: 'Montserrat', sans-serif
+        weight: 700
+        size: 2.8rem
+        
+    letter-spacing: 0.1em
+    @media screen and ( max-width: 715px )
+        margin-bottom: 40px
+    @media screen and ( max-width:500px )
+        // margin: 30*0.75px 0
+        font-size: 2.8*0.8rem
+        margin-right: 20px
+        
+
+.page-nav__link
+    cursor: pointer
+    @extend %tr-600
+    position: relative
+    color: $gray-l
+    margin-right: 22px
+
+.page-nav__link:hover
+    color: black    
+
+.page-nav__link::after
+    font-family: 'Montserrat', sans-serif
+    @extend %tr-500
+    @extend %op-0
+    transition-timing-function: ease-out
+    transition-property: opacity, color
+    content: '.'
+    font-size: 3.8rem
+    color: $gray-l
+    position: absolute
+    // bottom: -25px
+    bottom: -27px
+    
+
+.page-nav__link:hover::after
+    @extend %op-1
+        
+.dot-1::after
+    left: 8px
+
+.dot-2::after
+    left: 32px
+
+.dot-3::after
+    left: 34px
+
+.dot-4::after
+    left: 29px
+
+.dot-5::after
+    left: 22px
+
+.dot-6::after
+    left: 20px
+
+.dot-7::after
+    left: 31px
+
+.dot-8::after
+    left: 23px   
+
+.page-nav__link--clicked
+    color: black  
+
+.page-nav__link--clicked::after
+    @extend %op-1
+    color: black  
+    
+
+.page-nav__nav
+    display: flex
+    margin-top: 100px
+    margin-left: 4px
+    @media screen and ( max-width: 716px )
+        display: none
+        // margin-top: 100*0.75px
+        
