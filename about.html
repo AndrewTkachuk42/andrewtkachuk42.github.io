@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google" content="notranslate" />
+    <meta http-equiv="Content-Language" content="en_US" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>About Me</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="notranslate">
+    <header id="header">
+      <nav class="navbar">
+        <div class="navbar__logo">
+          <a class="navbar__logo-link" href="/">Bendina Photography</a>
+        </div>
+        <ul class="navbar__nav">
+          <li class="navbar__nav-item ml-0 navbar__underscore--1">
+            <a href="/" class="navbar__navlink">
+              Home
+              <i class="material-icons navbar__icn">play_arrow</i>
+            </a>
+          </li>
+
+          <li class="navbar__nav-item navbar__underscore--3">
+            <a href="/about.html" class="navbar__navlink">
+              About
+              <i class="material-icons navbar__icn">play_arrow</i>
+            </a>
+          </li>
+          <li class="navbar__nav-item navbar__underscore--4">
+            <a href="#" class="navbar__navlink">Contact</a>
+          </li>
+        </ul>
+        <div class="drop-down">
+          <div @click="showDropDown" class="drop-down__btn">
+            <div class="drop-down__btn-row">
+              <div class="drop-down__dot"></div>
+              <div class="drop-down__dot"></div>
+              <div class="drop-down__dot"></div>
+            </div>
+            <div class="drop-down__btn-row">
+              <div class="drop-down__dot"></div>
+              <div class="drop-down__dot"></div>
+              <div class="drop-down__dot"></div>
+            </div>
+            <div class="drop-down__btn-row">
+              <div class="drop-down__dot"></div>
+              <div class="drop-down__dot"></div>
+              <div class="drop-down__dot"></div>
+            </div>
+          </div>
+          <div class="drop-down__cross">
+            <div class="drop-down__line-1"></div>
+            <div class="drop-down__line-2"></div>
+          </div>
+        </div>
+
+        <div class="navbar__btn"></div>
+      </nav>
+      <nav class="page-nav">
+        <div class="breadcrumbs">
+          <!-- <span >About</span> -->
+          <span><a style="color:#a7a7a7" href="/">home / </a></span>
+          <span>about /</span>
+        </div>
+        <h1>about me :</h1>
+      </nav>
+    </header>
+    <section class="about">
+      <div class="about__wrapper">
+        <picture class="galery__img">
+          <source media="(max-width: 768px)" srcset="\img\about\4small.jpg" />
+          <source media="(min-width: 769px)" srcset="\img\about\4medium.jpg" />
+          <img srcset="\img\about\4medium.jpg" />
+        </picture>
+        <div class="about_text">
+          <h4>About me</h4>
+          <p>
+            Bring to the table win-win survival strategies to ensure proactive
+            domination. At the end of the day, going forward, a new normal that
+            has evolved from generation X is on the runway heading towards a
+            streamlined cloud solution. User generated content in real-time will
+            have multiple touchpoints for offshoring.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
